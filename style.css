@@ -1,38 +1,88 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Plano de fundo com gradiente */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background: #f2f2f2;
 }
 
-form {
-  background: white;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #aaa;
+/* Container central */
+.container {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+}
+
+/* Cartão do formulário */
+.form-card {
+  background: #fff;
+  padding: 30px 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  animation: fadeIn 0.6s ease;
+}
+
+.form-card h2 {
+  margin-bottom: 20px;
+  color: #333;
 }
 
 input {
-  display: block;
   width: 100%;
+  padding: 12px 15px;
   margin-bottom: 15px;
-  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
   font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+input:focus {
+  border-color: #2575fc;
+  outline: none;
 }
 
 button {
-  padding: 10px 20px;
+  width: 100%;
+  padding: 12px;
   font-size: 16px;
-  background: #28a745;
+  font-weight: bold;
+  background: #2575fc;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #1a5fd3;
 }
 
 #mensagem {
   margin-top: 15px;
+  font-weight: bold;
   color: red;
+}
+
+/* Animação de entrada */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
