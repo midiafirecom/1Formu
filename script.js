@@ -3,17 +3,22 @@ const mensagem = document.getElementById('mensagem');
 
 if (localStorage.getItem('registrado') === 'true') {
   form.style.display = 'none';
-  mensagem.textContent = '⚠️ Você já se registrou.';
-  mensagem.style.color = 'white';
+  mensagem.textContent = 'Já registrado';
+  mensagem.style.color = 'red';
+  mensagem.style.fontSize = '22px';
+  mensagem.style.fontFamily = '"Comic Sans MS", cursive, sans-serif';
   mensagem.style.textAlign = 'center';
-  mensagem.style.fontSize = '18px';
 }
 
 form.addEventListener('submit', function(e) {
   e.preventDefault();
 
   if (localStorage.getItem('registrado') === 'true') {
-    mensagem.textContent = '⚠️ Você já registrou anteriormente.';
+    mensagem.textContent = 'Já registrado';
+    mensagem.style.color = 'red';
+    mensagem.style.fontSize = '22px';
+    mensagem.style.fontFamily = '"Comic Sans MS", cursive, sans-serif';
+    mensagem.style.textAlign = 'center';
     return;
   }
 
@@ -23,6 +28,8 @@ form.addEventListener('submit', function(e) {
   localStorage.setItem('registrado', 'true');
   mensagem.textContent = '✅ Registrado com sucesso!';
   mensagem.style.color = 'green';
+  mensagem.style.fontSize = '18px';
+  mensagem.style.fontFamily = 'inherit';
 
   form.reset();
   setTimeout(() => {
